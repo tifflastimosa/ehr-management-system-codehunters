@@ -12,6 +12,7 @@ import java.util.List;
 import java.util.Locale;
 
 import org.springframework.format.annotation.DateTimeFormat;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -36,8 +37,8 @@ public class AppointmentController {
   }
 
   @GetMapping("/schedule")
-  public String showAppointmentForm(Model model) {
-    return "appointmentForm";
+  public ResponseEntity<String> showAppointmentForm(Model model) {
+    return new ResponseEntity<>(HttpStatus.ACCEPTED);
   }
 
   @PostMapping("/schedule")
